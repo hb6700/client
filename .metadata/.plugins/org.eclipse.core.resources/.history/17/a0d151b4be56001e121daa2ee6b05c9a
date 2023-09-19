@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex05_body</title>
+	</head>
+		<body bgcolor="margenta">
+			<!-- 
+			<body>태그
+			- 화면에 출격되는 모든 내용을 가지는 컨테이너
+			- 쌍태그, 혼합형
+			
+			<body>속성
+			1. bgcolor
+				- background color
+				- 문서 배경색
+			2. background
+				- 
+			-->
+			
+			
+		</body>
+</html>
