@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex11_link</title>
+	</head>
+	<body>
+		<!-- 
+		링크(link)
+		- <a>, anchor(닻), link
+		
+		링크 속성
+		- a.href : 클릭하면 이동할 URL. reference a hyperlink
+		- a.target : 열거형. _self|_blank|_parent|_top|프레임명
+		-->
+			
+		<h2>내부링크</h2>
+		<a href="ex10_list.html">10번 예제</a>
+		
+		<h2>외부링크</h2>
+		<a href="https://youtu.be/TA-aeCFktME?si=Gjo9-xFLmxs-uRsI">쯔양의 먹방</a>
+
+		<a href="https://naver.com" target="_blank">네이버</a>
+	</body>
+</html>

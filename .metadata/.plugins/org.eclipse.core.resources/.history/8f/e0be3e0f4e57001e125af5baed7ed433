@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex08_hr</title>
+	</head>
+	<body>
+		<!-- 
+		<hr> : Horizontal Rule
+		- 수평바, 구분자
+		- 문단과 문단을 구분하는 역할
+		- 콘텐츠와 콘텐츠를 구분하는 역할
+		- 
+		-->
+		ㅇㅇ
+		<hr>
+		ㅇㅇ
+	</body>
+</html>

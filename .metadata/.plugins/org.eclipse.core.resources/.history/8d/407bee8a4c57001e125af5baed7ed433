@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex07_heading</title>
+	</head>
+	<body>
+		<!-- 
+		<h1> ~ <h6> : heading
+		- 제목태그
+		- 문서 내의 제목을 출력하는 태그
+		- 쌍태그
+		- 혼합형
+		-->
+		<h1 color="red">안</h1>
+		<h2 color="orange">녕</h2>
+		<h3 color="yellow">하</h3>
+		<h4 color="green">신</h4>
+		<h5 color="blue">가</h5>
+		<h6 color="purple">요</h6>
+		
+	</body>
+</html>

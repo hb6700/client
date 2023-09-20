@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex11_list</title>
+	</head>
+	<body>
+		<!-- 
+		**** 대부분의 태그는 현업에서 활발하게 사용중...
+		
+		List(목록)
+		1. 순서가 있는 목록
+			- <ol> + <li>
+			- Ordered List
+				- type : "a", "A", "i", "1" ??
+			- List Item
+		2. 순서가 없는 목록
+			- <ul> + <li>
+			- Unordered List
+			- list Item
+		3. 용어 정의 목록
+			- <dl> + <dt> + <dd>
+			- Definition List
+			- Definition Term
+			- Definition Description
+		-->
+		<h1>오늘의 할 일</h1>
+		<ol type="A">
+			<li>수업 복습하기</li>
+			<ol type ="a">
+				<li>자바정리</li>
+				<li>오라클 정리</li>
+			</ol>
+			<li>책상 정리하기</li>
+			<li>우산 말리기</li>
+			<li>
+				운동하기
+				<ol type ="a">
+					<li>근력 운동</li>
+					<li>유산소 운동</li>
+					<li>스트레칭</li>
+				</ol>
+			</li>
+			<li>강아지 산책하기</li>
+		</ol>
+		
+		<hr size="5" color="blue">
+		
+		<h1>블릿(bullet)</h1>
+		<ul type="square">
+			<li>수업 복습하기</li>
+			<li>
+				책상 정리하기
+				<ol>
+					<li>책상정리</li>
+					<li>
+						방정리
+						<ul type="circle">
+							<li>가</li>
+							<li>나</li>
+							<li>다</li>
+						</ul>
+					</li>
+				</ol>
+			</li>
+			<li>우산 말리기</li>
+		</ul>
+		
+		<hr size="5" color="blue">
+		
+		<h1> "<ol reversed>" </h1>
+		<ol start="6">
+			<li>수업복습</li>
+			<li>운동</li>
+			<li>도시락만들기</li>
+			<li>방청소</li>
+			<li>강아지 목욕</li>
+		</ol>
+		
+		<hr size="5" color="blue">
+
+		<h1>자바</h1>		
+		<dl>
+			<dt>AKMU - Love Lee</dt>
+			<dt>
+				You know 내 스타일이 아닌 음악을 들어도
+				You know 좋아하지 않는 음식을 먹어도
+				우산 없이 비가 와 홀딱 다 젖어도 좋아
+				I love it because I love you
+			</dt>
+		</dl>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex12_url</title>
+	</head>
+	<body>
+		<!-- 
+		URL(URI)
+		- Uniform Resource Identifier
+		- Uniform Resource locator
+		- 웹상의 자원(페이지, 이미지, 영상, 프로그램 등)을 구분하기 위한 고유 주소값
+		
+		- 김채원도도도독
+		- https://youtu.be/jCMT4v6JI9Q?si=IQKNcgEK_JfQUyg2
+		- https://youtu.be/Kjq10TNm14k?si=LyrfGbPTLabW9QA3
+		- http://naver.com
+		
+		1. http://(https://)
+			- 프로토콜(=통신규약)
+			- Hyper Text Transfer Protocol (Security > 보안에 강화) > 웹페이지를 주고받는 통신규칙
+			- 웹서버와 클라이언트간의 데이터를 주고 받기 위한 약속
+		2. localhost/www.naver.com/www.youtube.com/
+		-->
+	</body>
+</html>
