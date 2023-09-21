@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex19</title>
+	</head>
+	<body>
+		<h1>HTML5</h1>
+		<form method="POST" action="ex18_server.jsp">
+			<input type="submit" value="전송하기">
+			<hr>
+			<!-- <input type="text" value="이름을 입력하시오." onfocus="this.value='';"> -->
+			<input type="text" placeholder="이름을 입력하시오.">
+			<br>
+			<input type="password" placeholder="암호 입력">
+			<br>
+			<textarea cols="40" rows="5" placeholder="자기소개"></textarea>
+			
+			<hr>
+			
+			<h3>로그인</h3>
+			아이디 : <input type="text" required><br>
+			암호 : <input type="password" required><br>
+			<input type="submit" value="로그인">
+			
+			<hr>
+			
+			<input type="text" value="이름을 입력하시오." onfocus="this.value='';">
+			
+			<hr>
+			이메일 : <input type="email"><br>
+			전화번호 : <input type="tel"><br>
+			url : <input type="url"><br>
+			나이 : <input type="number" min="0" max="100" step="10"><br>		
+			범위 : <input type="range" onchange="document.getElementById('txt1').value=this.value;" min="10" max="120" step="10"><br>
+			<input type="text" id="txt1" size="10">
+			색상 : <input type="color" onchange="document.body.bgcolor=this.value;">
+			날짜 시간 : <input type="date">
+			
+			
+			
+		</form>
+	</body>
+</html>

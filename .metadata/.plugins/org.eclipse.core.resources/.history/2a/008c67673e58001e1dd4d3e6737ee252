@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ex18_form</title>
+	</head>
+	<body>
+		<!-- 
+		폼<form>태그
+		- 입력 양식, 입력 컨트롤
+		- 클라이언트(사용자)로부터 입력장ㅈ치(키보드, 마우스, 터치 등)을 통해서 데이터를 입력받는 역할
+		- 입력 데이터 > 서버로 전송 > 업무 활용 or 데이터베이스 저장 등...
+		ex) 텍스트박스, 버튼, 체크박스, 라디오버튼 등...
+		- <form> + <form> 의 자식 태그들
+		-->
+		<h1>데이터 입력</h1>
+		<form>
+			나이 : <input type="text" name="age">
+			<br>
+			<input type="submit" value="보내기">
+		</form>
+	</body>
+</html>
