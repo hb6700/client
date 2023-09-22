@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03_selector.html</title>
+    <style>
+        /* 1. 전체 선택자 */
+        /* *{
+            color:lightcoral;
+        } */
+
+        /* 2. 태그 선택자 */
+        /* p{
+            color:blueviolet;
+        }
+        div{
+            color:darkorange;
+        } */
+
+        /* 3. ID선택자 */
+        h2#title{
+            color:blue;
+        }
+        p#address{
+            color:yellowgreen;
+        }
+        p#p1{
+            color:crimson;
+        }
+
+        /* 4. class선택자 */
+        div.txt{
+            color:violet;
+        }
+    </style>
+</head>
+<body>
+    <!-- ************** 중요 ************** -->
+    <!-- 
+        [CSS문법]
+        1.  선택자{속성명 : 값;}
+        2.  선택자{속성명 : 값; 속성명 : 값; 속성명 : 값; ...}
+        3.  선택자{
+                속성명 : 값;
+            }
+        4.  선택자{
+                속성명 : 값;
+                속성명 : 값;
+                속성명 : 값;
+                ...
+            }
+
+        [CSS선택자(CSS Selector)]
+        - 무언가를 선택 → 검색 → 태그(★★★★★)
+        - HTML 소스에서 특정 태그를 검색하는 도구(★★★★★★★★★★★)
+        - why? > 태그 검색 후 서식을 적용하기 위해
+
+        [CSS선택자]
+        1. 전체 선택자
+            - 모든 태그를 선택한다
+        2. 태그 선택자
+            - 태그명을 가지고 원하는 태그를 선택한다.
+            - 사용이 쉬움
+            - 같은 태그를 일괄적용 > 생산성/유지보수성
+            - 단점 : 같은 태그를 일괄적용  > 내가 원하는 영역 선택 불가능
+        3. ID선택자
+            - 태그에 명시된 ID속성을 검색해서 태그를 선택한다.
+            - 태그명#ID
+            - 원하는 태그를 직접 선택할 수 있다.
+            - ID > 일괄 적용이 안된다. 
+        4. class선택자
+            - 태그에 명시된 class 속성을 검색해서 태그를 선택한다
+            - 태그명.class
+            - 원하는 태그를 직접 선택할 수 있다.
+    -->
+
+    <h1>h1</h1>
+    
+    <!-- 페이지 내에서 ID선택자는 중복 불가!! 절대!!! 다만 중복해도동작은 됨 그러니까 주의해 -->
+    <p id="p1">너...p야?</p>
+    <p id="p2">p</p>
+    <p id="p3">p</p>
+    
+    <div class="txt">div</div>
+    <div class="txt">div</div>
+    <div class="txt">div</div>
+    
+    <h2 id="title">h2</h2>
+    <p>p</p>
+    <div>div</div>
+    
+    <ol>
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+    </ol>
+
+    <hr>
+
+    <h2>회사소개</h2>
+    <p id="address">오시는길 : 서울시 강남구 역삼동 테헤란로 어딘가</p>
+
+</body>
+</html>

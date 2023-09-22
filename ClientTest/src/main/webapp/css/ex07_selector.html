@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07_selector.html</title>
+    <style>
+        /* 인접형제 선택자 */
+        /* p + p{
+            color:orangered;
+        } */
+        /* 형제 선택자 */
+        hr ~ p{
+            color: blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+        선택자
+        1. 전체 선택자 : * {}
+        2. 태그 선택자 : tag {}
+        3. ID 선택자 : #id {}
+        4. class 선택자 : .class {}
+        5. 그룹 선택자 : sel1, sel2, sel3 {}
+        6. 자식 선택자 : 부모(parent) > 자식(child) {}
+        7. 자손 선택자 : 조상(parent) 자식(child) {}
+        8. 인접 형제 선택자 : sel1 + sel2 {}
+        9. 형제 선택자 : sel1 ~ sel2 {}
+
+        인접형제 선택자(Adjacent Sibling Selector)
+        선택자 + 선택자{
+            구현부;
+        }
+        - 정밀도가 높음 + 범위 좁음
+        - ( = 자식 선택자)
+
+        형제 선택자(Sibling Seleector)
+        선택자 ~ 선택자{
+            구현부;
+        }
+        - 정밀도 낮음 + 범위 넓음
+        - (= 자손 선택자)
+    -->
+    <p>p 태그</p>
+    <p>p 태그</p>
+    <p>p 태그</p>
+    <span>span 태그</span>
+    <hr>
+    <p>p 태그</p>
+    <span>span 태그</span>
+    <p>p 태그</p>
+    <div>div 태그</div>
+    <span>span 태그</span>
+    <hr>
+    <p>p 태그</p>
+</body>
+</html>

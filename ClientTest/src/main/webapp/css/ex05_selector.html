@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05_selector.html</title>
+    <style>
+        /* span{
+            color:blue;
+        } */
+
+        /* 자식선택자 */
+        /* ul > li > span{
+            color:darkorchid;
+        } */
+
+        /* 자손선택자 */
+        ul span{
+            color:darksalmon;
+        }
+
+        body > b{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    선택자
+    1. 전체 선택자 : * {}
+    2. 태그 선택자 : tag {}
+    3. ID 선택자 : #id {}
+    4. class 선택자 : .class {}
+    5. 그룹 선택자 : sel1, sel2, sel3 {}
+    6. 자식 선택자 : 부모(parent) > 자식(child) {}
+    7. 자손 선택자 : 조상(parent) 자식(child) {}
+    8. 인접 형제 선택자 : sel1 + sel2 {}
+    9. 형제 선택자 : sel1 ~ sel2 {}
+
+    [자식선택자(Child Selector)]
+    부모선택자 > 자식선택자{
+        구현부;
+    }
+    - 정밀도 높음 + 범위가 좁음
+
+    [자손선택자(Descendant Selector)]
+    부모선택자 자식선택자{
+        구현부;
+    }
+    - 정밀도 높음 + 범위 넓음
+
+    -->
+    <h1>커리큘럼</h1>
+
+    <ol>
+        <li>java <span>OOP</span></li>
+        <li>Oracle Database</li>
+        <li>Client(<b>HTML</b>)</li>
+        <li>Client(<b>CSS</b>)</li>
+        <li>Client(<b>JavaScript</b>)</li>
+    </ol>
+
+    <h2>공지사항</h2>
+    
+    <div>
+        <ul>
+            <li>구글 드라이브에 오후까지 <span>과제를 <b>제출</b>하세요.</span></li>
+            <li>주말에 <span>복습</span>하세요.</li>
+            <li>다음 주 <b>추석연휴</b> 입니다.</li>
+        </ul>
+    </div>
+
+    <hr>
+    <b>볼드체</b>
+    <hr>
+    <span>영역입니다.</span>
+
+</body>
+</html>
+
+
+    

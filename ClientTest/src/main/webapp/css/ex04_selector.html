@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04_selector.html</title>
+    <style>
+        /* h1#main-title{
+            color:red;
+        }
+        h2.sub-title{
+            color:orange;
+        }
+        p.employee-name{
+            color:green;
+        }
+        p.intro{
+            color:blue;
+        } */
+
+        /* 
+        5. 그룹 선택자
+        - 2r개 이상의 선택자를 한 번에 선언하는 방법
+        
+        [예시]
+        선택자, 선택자, 선택자{
+            구현부;
+        }
+        */
+
+        /* h1#main-title, h2.sub-title, p.employee-name{
+            color:darkmagenta;
+        } */
+
+        /* h1, h2, p{
+            color:greenyellow;
+        } */
+
+        /* h1, h2.sub-title{
+            color:mediumslateblue;
+        } */
+
+        /* 태그명 생략 가능 > *(와일드카드)로 인식해서 동작 but 문제는 없음 */
+        #main-title{
+            color:aqua;
+        }
+        .sub-title{
+            color:crimson;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">회사 소개</h1>
+
+    <h3 class="sub-title">소제목입니당~~~~</h3>
+
+    <h2 class="sub-title">대표이사</h2>
+    <p class="employee-name">홍길동</p>
+    <p class="intro">인삿말인삿말인삿말인삿말</p>
+    
+    <h2 class="sub-title">기획팀장</h2>
+    <p class="employee-name">아무개</p>
+    <p class="intro">인삿말인삿말인삿말인삿말</p>
+    
+    <h2 class="sub-title">운영부장</h2>
+    <p class="employee-name">카리나</p>
+    <p class="intro">인삿말인삿말인삿말인삿말</p>
+
+    <hr>
+
+    <h1>CSS적용X : h1</h1>
+    <h2>CSS적용X : h2</h2>
+    <p>CSS적용X : p</p>
+</body>
+</html>
