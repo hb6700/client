@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex21_visibility.html</title>
+    <style>
+        /*
+        가시성(Visibility)
+        - 요소를 화면에 보이게 할것인가? 말것인가?
+        - 요소의 원래 영역은 
+        */
+        #cat1{
+            visibility: visible;
+        }
+        #cat2{
+            visibility: visible;
+        }
+        /* #cat3{
+            visibility: visible ;
+        } */
+        /* #cat1:hover{
+            visibility: hidden;
+        } */
+        /* #cat1:hover + #cat2{
+            visibility: hidden;
+        } */
+        /* #cat1:hover ~ img{
+            visibility: hidden;
+        } */
+        #box{
+            border: 1px solid black;
+            padding: 30px;
+        }
+        #cat1, #cat2, #cat3{
+            visibility: hidden;
+        }
+        #box:hover > img{
+            visibility: visible;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="../asset/images/catty01.png" id="cat1">
+        <img src="../asset/images/catty02.png" id="cat2">
+        <img src="../asset/images/catty03.png" id="cat3">
+    </div>
+</body>
+</html>

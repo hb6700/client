@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>ex22_display.html</title>
+    <style>
+        /* 
+        display
+        - 요소의 출력방식 조작
+        */
+        .box{
+            border: 1px solid black;
+            display: inline;
+        }
+        .link{
+            border: 1px solid black;
+            display: block;
+            /* width: 100px; height: 100px; */
+        }
+        ul{
+            border: 1px solid red;
+            padding: 0;
+        }
+        li{
+            border: 1px solid blue;
+        }
+        #menu li{
+            /* inline의 성질 + 크기 지정 */
+            display: inline-block;
+            width: 16%;
+            background-color: aquamarine;
+            text-align: center;
+            padding: 10px;
+        }
+        #menu li:hover{
+            background-color: chartreuse;   /*배경색*/
+            color:aliceblue                 /*글씨체*/
+        }
+    </style>
+</head>
+<body>
+    <ul id="menu">
+        <li>메뉴</li>
+        <li>메뉴</li>
+        <li>메뉴</li>
+        <li>메뉴</li>
+        <li>메뉴</li>
+    </ul>
+    <h1>블럭태그</h1>
+    <!-- div#box$.box{상자$}*3 -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+    <h1>인라인태그</h1>
+    <!-- a[href=#]#link$.link{링크$}*3 -->
+    <a href="#" id="link1" class="link">링크1</a>
+    <a href="#" id="link2" class="link">링크2</a>
+    <a href="#" id="link3" class="link">링크3</a>
+</body>
+</html>
