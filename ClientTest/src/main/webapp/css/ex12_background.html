@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12_background.html</title>
+    <style>
+        body{
+            /* 1. 배경색 */
+            border: 5px solid black;;
+            /* background-color: chartreuse; */
+            /* background-color: #ff0000; */
+            /* background-color:rgb(0, 255, 255); */
+            /* background-color:rgba(0, 255, 255, 0.1); */
+
+            /* 2. 배경이미지 */
+            background-image: url(./../asset/images/dog01.jpg);
+            background-repeat :no-repeat ;   /* repeat, repeat-x, repeat-y, no-repeat */
+            /* background-position: 0% 0%; */
+            background-position: center center;
+            /* background-position: 500px 50px; */
+            background-attachment: scroll;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        CSS수업
+        1. 선택자
+        2. 서식 구현 > 속성 + 값
+
+        HTML 서식 기능 vs CSS서식 기능
+        1. HTML
+            - 특정 태그에 미리 정해져 있는 속성이 있다
+                - <body bgcolor=""> : (O)
+                - <h1 bgcolor="">   : (X)
+                - 제한적이다.(태그에 속해있는 속성만 적용 가능)
+        2. CSS
+            - 모든 속성을 모든 태그에 적용 가능하다.
+            - 어떤 속성이든 선택자로 찾은 모든 태그에 적용이 가능하다.
+            - 1개의 속성 수업 > 모든 태그에 적용이 가능하다
+            - HTML 서식 기능 <<<<<< CSS서식 기능(양, 종류, 기능의 다양함)
+        
+        배경
+        1. 배경색
+            - background-color
+        2. 배경이미지
+            - background-image
+        
+        CSS색상 표현
+        1. Color Name : red, yellow, blue ...
+        2. RGB Color(HEX) : #FFFFFF...
+        3. RGB Color(DEC) : rgb(255, 255, 255)
+        4. RGBA Color(DEC) : rgba(255, 255, 255, 1) > a(alpha channel : 불투명도(0 ~ 1))
+    -->
+    <h1>배경속성</h1>
+    <p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br>
+    <p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br>
+    <p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br>
+    <p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br>
+    <p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br>
+    <p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br>
+    <p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br>
+    <p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br><p>내용</p><br>
+</body>
+</html>
