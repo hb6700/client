@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex33_selector.html</title>
+    <style>
+        /* 
+        css선택자
+        1. :first-child > 가상클래스
+        2. ::before > 가상요소
+
+        전후선택자 - 선택한 요소의 앞 뒤에 추가로 내용을 생성하는 역할
+        1. ::before = :before
+        2. ::after = :after
+        */
+        p > span{
+            color: blue;
+        }
+        /* p > span::before{
+            content: '[';
+            color:orange;
+        }
+        p > span::after{
+            content: ']';
+            color: orange;
+        } */
+        p > span.tel::before{
+            content:'🚨';
+            margin-right: 3px;
+        }
+
+    </style>
+</head>
+<body>
+    <p> 
+        ipsum dolor sit <span>amet</span> consectetur adipisicing elit. 
+        Natus labore minus accusantium officiis. 
+        Unde, omnis repellat <span>voluptas</span> maiores illo assumenda <span class="tel">010-1234-5678</span>fuga dignissimos mollitia nemo, 
+        provident eveniet <span>saepe</span> laboriosam eaque iste?
+    </p>
+</body>
+</html>
+

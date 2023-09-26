@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex27_position.html</title>
+    <style>
+        /* 
+        요소의 위치(position)
+        1. padding > 부모가 자식의 위치를 지정
+        2. margin > 스스로 위치 지정
+        3. position > 정석(CSS1~CSS3)
+        4. transform > 정석(CSS3)
+
+        position
+        - 좌표값 사용 > 위치 지정
+        - x(left), y(top)
+        - 좌표를 지정하는 방식을 여러개 제공 > 원점(기준점)이 다양
+
+        1. position: static
+            - 기본값
+            - 정적 좌표
+            - x, y 사용 불가능
+            - 워드프로세서 방식 > FlowLayout
+                - 코딩 순서대로 출력되는 방식
+        2. position: absolute
+            - 절대좌표
+            - left, top
+            - 문서의 좌측 상단을 원점으로 한다.(X) > 
+                - 자신의 직계조상중에서 가장 처음 만나는(position이 static이 아닌)태그를 원점으로 한다.
+            - 원래 태그가 있던 공간은 사라진다.
+        3. position: relative
+            - 상대좌표
+            - left, top
+            - 자신의 위치를 원점으로 한다
+            - 원래 태그가 있던 공간이 그대로 유지된다.
+        4. position: fixed
+            - 고정좌표
+            - left, top
+            - 문서의 좌측 상단을 원점으로 한다(x) > 
+                - 눈에 보이는 브라우저 창의 좌측 상단을 원점으로 한다(O) > 
+                - 스크롤에 반응 안하고, 고정된다.
+            - 원래 태그가 있던 공간은 사라진다.
+        
+        z-index 숫자가 높을수록 우선순위에서 우위 점령 >??? 찾아봐야함
+        */
+
+        .box{
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+        }
+        #box1{
+            position: absolute;
+            left: 100px;
+            top: 200px;
+            background-color: tomato;
+            z-index: 3;
+        }
+        #box2{
+            position: absolute;
+            left: 50px;
+            top: 150px;
+            background-color: gold;
+            z-index: 2;
+        }
+        #box3{background-color: cornflowerblue;}
+        #box4{
+            background-color: orange;
+            position:absolute;
+            /* left: 1000px */
+            top: 0px;
+            left: 0px;
+            /* bottom: 0px; */
+        }
+
+        /* #box2{ */
+            /* position:absolute;
+            left: 0px;
+            top: 0px; */
+
+            /* position: relative;
+            left: 150px;
+            top: 150px; */
+
+            /* position:fixed;
+            left: 0px;
+            top: 0px */
+        
+
+        #b1, #b2, #b3{
+            border: 10px solid black;
+        }
+        #b1{
+            width: 500px;
+            height: 500px;
+            background-color: tomato;
+            /* position: absolute;
+            left: 300px;
+            top: 500px; */
+        }
+        #b2{
+            width: 400px;
+            height: 400px;
+            background-color: gold;
+            margin: 30px;
+            position: absolute;
+            left: 300px;
+            top: 500px;
+        }
+        #b3{
+            width: 300px;
+            height: 300px;
+            background-color: cornflowerblue;
+            margin: 30px;
+            position: absolute;
+            left: 300px;
+            top: 500px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>position</h1>
+    <div id="box4" class="box">상자</div>
+
+    <!-- --------------------------------------------------------- -->
+
+    <h1>absolute</h1>
+    <div id="b1">
+        박스
+        <div id="b2">
+            박스
+            <div id="b3">
+                박스
+            </div>
+        </div>
+    </div>
+    <h1>position</h1>
+
+    <!-- --------------------------------------------------------- -->
+
+    <!-- div#box$.box{상자$}*3 -->
+    <div id="box1" class="box">상자1</div>
+    <div id="box2" class="box">상자2</div>
+    <div id="box3" class="box">상자3</div>
+
+    <!-- (p>lorem)*30 -->
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore quos explicabo alias recusandae, dicta cum delectus voluptatum voluptates doloremque non. Culpa dolor, labore sit nemo omnis illo deleniti saepe cupiditate?</p>
+    <p>Eius tempora minima enim eos! Quasi repudiandae nesciunt labore doloribus sequi dolores numquam eligendi exercitationem incidunt? Quod vero rem modi id quibusdam, odio, optio exercitationem iure impedit nostrum, asperiores provident.</p>
+    <p>Et neque rerum tempore quo distinctio ducimus quidem. Ipsum, et vero obcaecati porro, mollitia laboriosam impedit maxime necessitatibus voluptatem commodi illum esse harum magnam provident voluptas dicta doloribus. Illo, esse?</p>
+    <p>Exercitationem, inventore minima? Dolor expedita inventore similique atque temporibus autem reiciendis, ad, sint quis ab in, a eum labore sed ducimus. Nam, accusamus. Nesciunt commodi veniam repellendus ipsum autem consectetur.</p>
+    <p>Ipsam harum, voluptatem modi aspernatur id mollitia ad quibusdam maiores numquam at accusantium? Deserunt ipsa earum fugiat aliquid enim consequatur sunt dolore vitae minima similique eaque, voluptatum hic ex tempora?</p>
+    <p>Amet quisquam reiciendis corporis labore recusandae expedita dolores sit repudiandae nihil ipsa iure voluptatum, excepturi, est vero aut velit, temporibus fugiat necessitatibus at atque! Eligendi veritatis dolore in cum consectetur.</p>
+    <p>Velit, et recusandae dolorum maiores distinctio nostrum doloremque sed, saepe vel iste, labore aut corrupti ipsum perspiciatis. Dolorum distinctio accusantium nulla at asperiores dolorem fugiat autem nam, cumque ad accusamus.</p>
+    <p>Numquam nihil molestiae mollitia sapiente molestias nisi veritatis, modi ipsam tempora vero rem natus recusandae dolorum illum nemo, eos aut tempore dicta ab omnis labore vel! Recusandae, libero? Doloremque, facilis.</p>
+    <p>Repellendus et facilis aliquam, exercitationem eos fugit illum possimus. Quisquam ex voluptatum repudiandae, obcaecati maiores laboriosam nostrum nemo suscipit ipsam delectus rem quam autem. Suscipit aspernatur voluptates voluptas sapiente esse?</p>
+    <p>Rem soluta dolorum culpa dolorem, tenetur voluptatem, sint sunt vel inventore sed maxime fugit odit quibusdam ad minus dolore porro sapiente dignissimos aliquam similique necessitatibus. Eos dignissimos consequatur fuga explicabo.</p>
+    <p>Suscipit a corrupti doloremque! Voluptatum necessitatibus doloremque mollitia earum numquam, itaque illum, adipisci eius quia harum modi distinctio, corporis error rerum voluptate tempore laudantium ducimus facere doloribus? Sed, perspiciatis quasi.</p>
+    <p>Pariatur rem dicta animi, ex odio eos cum perspiciatis repellendus ipsum quidem natus consequatur, fugit omnis. Autem asperiores earum quia corporis neque magnam id rerum saepe. Similique saepe exercitationem deserunt.</p>
+    <p>Ipsum, pariatur maxime? Nesciunt nulla dolorum error obcaecati ducimus, porro minus magnam corporis id ratione maxime rem molestias tempore amet odio similique delectus unde vitae soluta ad nemo. Deleniti, architecto.</p>
+    <p>Officia, odio sit reprehenderit hic quisquam quia rerum nihil quas voluptatum sed corporis cumque animi id, modi, laboriosam quis mollitia facere placeat maiores iure eum aperiam repellat repellendus recusandae. Sint.</p>
+    <p>Temporibus est pariatur repudiandae suscipit itaque laborum necessitatibus rem culpa, facilis, incidunt porro nihil. Accusamus ullam aliquid explicabo totam necessitatibus enim, odit porro nemo eius aspernatur, expedita, cupiditate pariatur quaerat.</p>
+    <p>Fugit neque excepturi ipsa ab corrupti fuga incidunt tempora officia, esse cupiditate illo est numquam dicta dolorem illum rerum eum omnis, labore, a nam odit adipisci vitae architecto asperiores? Ratione!</p>
+    <p>Minima itaque debitis animi quis voluptates repudiandae fugit consequuntur, maxime adipisci, vel suscipit expedita laborum. Voluptate totam, ad omnis, consectetur autem cum veritatis quibusdam magnam, officiis eum libero praesentium? Natus?</p>
+    <p>Laudantium accusamus ut perspiciatis minus fuga, reprehenderit ipsa! Voluptatum laborum maxime animi repellat expedita optio amet omnis aspernatur saepe dolores, laboriosam ab magni iste, quis minus tenetur porro quo voluptates.</p>
+    <p>Dicta commodi dignissimos asperiores rem temporibus, atque consectetur soluta ea neque quos omnis perferendis animi fugiat inventore quae minima cupiditate earum consequuntur laboriosam minus. Sit voluptatem velit nam fugiat maiores.</p>
+    <p>Odit eum beatae iusto praesentium corrupti nam sit incidunt, nihil tenetur! Provident possimus hic in ipsam asperiores totam voluptatum voluptatem incidunt praesentium vero, nulla architecto dolore consectetur sed eum sequi.</p>
+    <p>Odit maiores praesentium qui dolores harum, at amet! Quidem culpa optio quaerat ipsum fugiat, eum ratione natus hic ipsam, molestiae enim odio aspernatur. Dicta consequatur ut provident nostrum natus recusandae.</p>
+    <p>Libero, quis unde deserunt amet minima inventore praesentium laborum explicabo error nesciunt esse expedita magni quod saepe eaque, itaque ut quaerat? Nam, repudiandae amet fuga non fugit consectetur? Voluptatem, sit!</p>
+    <p>Incidunt praesentium necessitatibus ipsum recusandae corrupti, soluta id dignissimos labore sit nemo magnam omnis ab atque magni pariatur est voluptates eum obcaecati tempora laborum earum vero sapiente. Eveniet, doloribus omnis?</p>
+    <p>Eveniet incidunt perferendis molestias earum facilis nesciunt voluptatibus ab reiciendis vel repellendus, sint ut ipsum ad. In voluptatibus assumenda, quos, id soluta eaque distinctio culpa corporis expedita nihil, molestiae excepturi.</p>
+    <p>Quae perferendis tenetur cupiditate voluptatum magni modi minima quisquam illum dolores perspiciatis? Cumque voluptatum, accusantium nobis voluptates qui similique deserunt laborum nulla est deleniti rerum possimus veniam ad expedita vero!</p>
+    <p>Dignissimos aut quibusdam earum mollitia. Pariatur libero quidem voluptas beatae corrupti adipisci autem, voluptate doloribus error perspiciatis ratione numquam repellat iure. Cumque repellendus provident, consequatur esse expedita obcaecati corporis commodi.</p>
+    <p>Natus, quia? Eveniet facere, optio atque magni itaque vitae voluptas tenetur voluptatem doloribus? Cumque nobis ab, recusandae fugit, a excepturi quidem, numquam incidunt itaque eius ut repellat minima modi repudiandae.</p>
+    <p>Tenetur porro eum illo, dicta id officiis labore, voluptas, nam eveniet nulla possimus! Fuga sit repellendus quia cum impedit, molestias debitis ut animi eum iusto molestiae eligendi? Voluptatibus, ipsam repellendus!</p>
+    <p>Distinctio, repellendus praesentium? Doloremque illo iusto nam corporis deleniti ipsa, porro dolore mollitia magnam praesentium rem commodi voluptatibus laboriosam, consectetur harum ad facilis vero culpa accusamus, natus quos cumque quam.</p>
+    <p>Vel esse aperiam ipsum fugit, nobis explicabo accusamus, assumenda in facilis quam nisi deleniti dolores? Porro voluptates vitae rem modi, accusantium repudiandae reiciendis, voluptatibus quia adipisci tempora ea recusandae dignissimos?</p>
+</body>
+</html>
