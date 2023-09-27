@@ -1,0 +1,52 @@
+/* ex44.css */
+
+#main-menu > img, #side-menu > img, #footer-menu > img{
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+
+#main-menu{
+    border: 1px solid black;
+    font-size: 0;
+    width: 630px;
+    margin: 0 auto;
+    transform: translate(0px, -100px);
+    
+}
+
+/* #main-menu:hover{
+    transform: translate(0, -10px);
+} */
+
+#main-menu > img:hover{
+    transform: translate(0px, 90px);
+}
+
+#side-menu{
+    border: 0px solid black;
+    font-size: 0;
+    width: 126px;
+    transform: translate(-105px, 0px);
+}
+
+#side-menu > img:hover{
+    transform: translate(90px, 0px);
+}
+
+#footer-menu{
+    border: 10px solid black;
+    background-color: gold;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 0px solid black;
+    font-size: 0;
+    width: 630px;
+    margin: 0 auto;
+    transform: translate(0px, 100px);
+}
+
+#footer-menu > img:hover{
+    transform: translate(0px, -90px);
+}

@@ -1,0 +1,71 @@
+/* ex43.css */
+
+body{margin-bottom: 500px;}
+
+.box{
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+}
+
+#box1{
+    background-color: tomato;
+}
+#box2{
+    background-color: gold;
+}
+#box3{
+    background-color: cornflowerblue;
+}
+
+/* 
+Transform(변형) : 위치 배율 회전 왜곡
+1. translate() : 위치 변형(이동)
+2. scale() : 배율 변형(확대/축소)
+3. rotate() : 회전 변형
+--------------------------
+[잘 안쓰긴 함]
+4. skew() : 왜곡(비틀기) > 애매함
+5. matrix() : 사용자 정의형(1~4번 + 정의되지 않은것 가능) > 난이도 어려움
+*/
+
+#box1{
+    /* position: relative; */
+    /* transform:translate(100px, 100px); */
+
+    /* 상자 너비 증가(width, height) */
+    /* width: 240px; */
+
+    transform: rotate(-30deg);
+
+    /* transform: skew(0deg, 0deg); */
+}
+
+#box1:hover{
+    /* transform: translate(0px, 50px); */
+    /* transform: scale(1.2, 1.2); */
+    transform: rotate(45deg);
+}    
+
+#box2{
+    transform: scale(1, 1);
+}
+
+input[type=text]{
+    font-size: 2rem;
+    padding: 5px;
+    outline: none;
+    transform: scale(-1.1);
+}    
+
+/* 
+input[type=text]:hover{
+    transform: rotate(45deg);
+} */
+
+#cat > img:hover{
+    /* transform: translate(0px, -20px); */
+    /* transform: scale(1.2, 1.2); */
+    transform: translate(0, -50px) scale(1.2, 1.2);
+}

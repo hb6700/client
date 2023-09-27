@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/607a3353fc.js" crossorigin="anonymous"></script>
     <title>ex37_border.html</title>
     <style>
         #box{
@@ -11,7 +12,13 @@
             height: 200px;
             margin: 50px;
             /* border-radius: 100px;  */
-            border-radius: 50%;
+            /* border-radius: 50%;    */
+            padding: 20px;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius:100px;
+            border-bottom-right-radius: 50px;
+            /* border-radius: 50%; */
         }
         /* 
         모서리 둥글기
@@ -19,7 +26,83 @@
         - px, %
         - width/height(단축) 1/2 최대값
         */
-    </style>
+        #cat img{
+            border-radius: 94px;
+        }
+        #txt1{
+            border-radius: 10px;
+            border: 1px solid #777;
+            outline:none;
+            /* padding-left: 10px; */
+            padding: 5px 10px;   
+        }
+        #search{
+            width: 245px;
+        }
+        #search input{
+            float: left;
+            border: 1px solid #777;
+            color: #333;
+            padding: 5px;
+            outline: none;
+
+        }
+        #search input[type=text]{
+            border-right: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        #search input[type=button]{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        /**************************/
+        #search::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        #icon{
+            /* 이미지(X) 폰트(O) 딩벳폰트 */
+            font-size: 3rem;
+            color: dodgerblue;
+        }
+        
+        /* ************************************************ */
+
+        #search2{
+            width: 245px;
+        }
+        #search2 input #search2 button{
+            float: left;
+            border: 1px solid #777;
+            color: #333;
+            padding: 5px;
+            outline: none;
+        
+        }
+        #search2 input[type=text]{
+            border-right: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        #search2 button{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        #search2 button:hover{
+            background-color: #ccc;
+        }
+        #search2::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        </style>
 
 </head>
 <body>
@@ -28,5 +111,31 @@
         Repellat iusto, est iste dicta voluptas eligendi libero molestiae nobis aliquid 
         vero similique laudantium, atque veritatis ea in! Similique id facere libero.
     </div>
+    <hr>
+    <div id="cat">
+        <img src="../asset/images/cat01.jpg">
+        <img src="../asset/images/cat02.jpg">
+        <img src="../asset/images/cat03.jpg">
+        <img src="../asset/images/cat04.jpg">
+        <img src="../asset/images/cat05.jpg">
+    </div>
+    <hr>
+    <input type="text" id="txt1">
+    <hr>
+    <h1>검색</h1>
+    <div id="search">
+        <input type="text" placeholder="검색어를 입력하세요">
+        <input type="button" value="search">
+    </div>
+    <hr>
+    <div id="search2">
+        <input type="text" placeholder="검색어를 입력하세요">
+        <button>
+            <i class="fa-brands fa-youtube"></i>
+        </button>
+    </div>
+    <hr>
+    <i id="icon" class="fa-brands fa-twitter"></i>
+    
 </body>
 </html>

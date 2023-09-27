@@ -1,0 +1,61 @@
+/* ex47.css */
+#list{
+    border: 1px solid black;
+    width: 900px;
+}
+
+#list .box{
+    width: 100px;
+    height: 50px;
+    margin: 15px 0;
+    transition-property: margin-left;
+    transition-duration: 5s;
+}
+
+#box1{
+    background-color: tomato;
+    /* transition-delay: 0.5s; */
+    transition-timing-function: linear;
+}
+#box2{
+    background-color: orange;
+    /* transition-delay: 1.0s; */
+    transition-timing-function: ease;
+}
+#box3{
+    background-color: gold;
+    /* transition-delay: 1.5s; */
+    transition-timing-function: ease-in;
+}
+#box4{
+    background-color: yellowgreen;
+    /* transition-delay: 2.0s; */
+    transition-timing-function: ease-out;
+}
+#box5{
+    background-color: cornflowerblue;
+    /* transition-delay: 2.5s; */
+    transition-timing-function: ease-in-out;
+}
+
+#list:hover .box{
+    margin-left: 800px;
+}
+
+
+/* ........ */
+#icon{
+    border: 10px solid black;
+    width: 126px;
+    height: 126px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+#icon:hover img{
+    transform:translate(0px, 0px);
+}
+
+#icon img{
+    transform: translate(0px, 126px);
+}

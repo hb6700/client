@@ -1,0 +1,30 @@
+/* ex39.css */
+/* 
+background
+1. background-color
+2. background-image
+3. background-repeat
+4. background-position
+5. background-attachment
+6. background-size(new!!)
+*/
+#box{
+    border: 1px solid black;
+    width: 400px; height: 400px;
+    margin: 50px;
+
+    background-image: url(../../asset/images/cat05.jpg);
+    /*background-size: 400px 400px;*/       /* width height */
+    
+    /* 1. 빈공간이 생기도록 */
+    /* background-size: 400px auto; */
+    /* background-size: contain; */
+
+    /* 2. 빈공간은 없으나 영역을 채우고 남는 부분은 잘림 */
+    /* background-size: auto 400px;     */
+    background-size: cover;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}

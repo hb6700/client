@@ -1,0 +1,35 @@
+/* ex45.css */
+
+body{margin-bottom: 500px;}
+
+.box{
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+}
+
+#box1{
+    background-color: tomato;
+}
+#box2{
+    background-color: gold;
+}
+#box3{
+    background-color: cornflowerblue;
+}
+
+/* body{
+    border: 1px solid black;
+} */
+
+body:hover #box2{
+    /* background-color: blue; */
+    transform: rotate(45deg);
+
+    /* 변화 중심축(열거형, %, px) */
+    /* transform-origin: 0% 0%; > 왼쪽 상단에 압정 */
+    transform-origin: 200% 200%;
+
+
+}
