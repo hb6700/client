@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex52_grid.html</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        /* html{
+            border: 10px solid violet;
+        }
+        body{
+            border: 10px solid blue;
+            height: 100%;
+        } */
+
+        main {
+            display: grid;
+            grid-template-rows: 50px 200px auto;
+            grid-template-columns: 200px minmax(800px, 1fr);
+            /* height: 100%; */
+            height: 100vh;      /*viewport-height*/
+        }
+
+        #menu {
+            background-color: orange;
+            grid-row: 1/4;
+            text-align: center;
+        }
+        #menu > h1 {
+            color: white;
+            /* text-align: center; */
+        }
+        #menu > hr {
+            border: 0;
+            border-bottom: 1px solid white;
+        }
+        #menu > ul {
+            padding: 0;
+            color: white;
+        }
+        #menu > div {
+            color: white;
+            font-size: 14px;
+            padding: 20px;
+            /* text-align: center; */
+        }
+
+        #search {
+            background-color: gold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #search input[type=text] {
+            border: 1px solid yellow;
+            width: 430px;
+            padding: 5px;
+            outline: none;
+        }
+        #search button {
+            width: 100px;
+            height: 27px;
+            border: 1px solid yellow;
+            background-color: yellow;
+        }
+
+        #banner {
+            background-color: yellowgreen;
+        }
+        #banner > img {
+            object-fit: cover;
+            width: 100%; height: 100%;
+        }
+
+        #list {
+            background-color: cornflowerblue;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        #list > div {
+            background-color: yellowgreen;
+        }
+        #list > div > img {
+            display: block;
+            margin: 20px auto;
+            border: 3px solid white;
+            padding: 3px;
+        }
+        #list > div > div {
+            margin: 30px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* 스마트폰~태블릿 세로 */
+        @media screen and (max-width:768px){
+            /* *{font-family: 궁서체;} */
+            main {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 200px 50px 200px auto;
+                height: 100vh;
+            }
+            #menu {
+                grid-row: auto;
+            }
+            #menu ul {
+                display: flex;
+                justify-content: center;
+                margin: 0;
+            }
+            #menu li {
+                list-style-type: none;
+                margin: 0px 7px
+            }
+            #menu hr {
+                display: none;
+            }
+
+            #list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- main>div#menu>h1{study}ul>li*5 -->
+    <main>
+        <div id="menu">
+            <h1>STUDY</h1>
+            <ul>
+                <li>Java</li>
+                <li>Oracle</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+            <hr>
+            <!-- ul>li*5 -->
+            <ul>
+                <li>Class</li>
+                <li>Method</li>
+                <li>Interface</li>
+                <li>Property</li>
+                <li>Attribute</li>
+            </ul>
+            <hr>
+            <div>
+                &copy;Copyright test.com<br>
+                All right reserved.
+            </div>
+        </div>
+
+        <div id="search">
+            <input type="text">
+            <button>Search</button>
+        </div>
+
+        <div id="banner">
+            <img src="../asset/images/gimbal.jpg">
+        </div>
+
+        <div id="list">
+            <!-- (div>img[src=../asset/images/rect_icon$$.png]+(div>lorem))*6 -->
+            <div>
+                <img src="../asset/images/rect_icon01.png" alt="">
+                <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur asperiores eligendi similique ratione aliquid dolorum voluptate molestias vel, minima delectus numquam provident harum voluptas, cumque laudantium sequi? Repudiandae, recusandae asperiores!</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon02.png" alt="">
+                <div>Ad molestias asperiores commodi quaerat impedit quis culpa minima. Sed esse blanditiis, sequi saepe itaque tempore doloribus laudantium rerum omnis commodi maiores fugiat et ea voluptate, magni quis explicabo molestias.</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon03.png" alt="">
+                <div>Quas qui maiores asperiores ut, incidunt esse accusamus sequi molestiae illum eveniet soluta inventore culpa hic voluptatibus rerum magni porro neque iusto accusantium facere corporis ducimus labore eius impedit? Esse.</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon04.png" alt="">
+                <div>Similique hic dignissimos rerum placeat minus quae expedita itaque consectetur inventore ducimus necessitatibus temporibus, doloremque autem laboriosam odio delectus quibusdam ratione, nam, eius maxime laborum! Neque laborum dolorem voluptas in.</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon05.png" alt="">
+                <div>Assumenda soluta tempore earum architecto deserunt velit a explicabo nulla sequi, saepe ratione placeat tenetur eum mollitia sint hic pariatur aliquid harum asperiores consequuntur rem dolores autem. Blanditiis, ducimus saepe.</div>
+            </div>
+            <div>
+                <img src="../asset/images/rect_icon06.png" alt="">
+                <div>Facilis, quasi repudiandae cupiditate quaerat praesentium nemo velit vero minus incidunt maxime iste, necessitatibus quam illum aperiam dolore hic veritatis officiis natus laudantium? Quod ratione optio numquam? Optio, at molestias.</div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
