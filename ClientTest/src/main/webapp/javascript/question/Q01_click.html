@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q01_click</title>
+    <style>
+        div{
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>데이터 입력</h1>
+    <form name="form1">
+        <div> 이름 : <input type="text" name="txt1"> </div>
+        <div> 나이 : <input type="text" name="txt2"> </div>
+        <div> 별명 : <input type="text" name="txt3"> </div>
+        <div>
+            <input type="button" value="Long" name="btn1">
+            <input type="button" value="Short" name="btn2">
+        </div>
+    </form>
+
+    <script>
+        var txt1, txt2, txt3, btn1, btn2;
+
+        txt1 = window.document.form1.txt1;
+        txt2 = window.document.form1.txt2;
+        txt3 = window.document.form1.txt3;
+        btn1 = window.document.form1.btn1;
+        btn2 = window.document.form1.btn2;
+
+        btn1.onclick = m1;
+        btn2.onclick = m2;
+
+        function m1() {
+            txt1.size = 50;
+            txt2.size = 50;
+            txt3.size = 50;
+        }
+        function m2() {
+            txt1.size = 20;
+            txt2.size = 20;
+            txt3.size = 20;
+        }
+
+    </script>
+</body>
+</html>
