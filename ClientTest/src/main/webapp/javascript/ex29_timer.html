@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex29_timer</title>   
+</head>
+<body>
+    <!-- 
+        타이머(Timer)
+        타이머 시작
+        1. id setTimeout(할일, 시간);
+            - 1회성 타이머
+        2. id setInterval(할일, 시간);
+            - 반복 타이머
+
+        타이머 종료 
+        1. void clearTimeout(id);
+        2. void clearIntervak(id);
+    -->
+    <h1>TIMER</h1>
+
+    <form name="form1">
+        <fieldset>
+            <legend>setTimeout</legend>
+            <input type="button" value="button" name="btn1">
+            <input type="text" name="txt1">
+        </fieldset>
+        <fieldset>
+            <legend>setInterval</legend>
+            <input type="button" value="button" name="btn2">
+            <input type="text" name="txt2">    
+        </fieldset>
+
+        <fieldset>
+            <legend>setInterval</legend>
+            <input type="button" value="START" name="btn3">
+            <input type="button" value="STOP" name="btn4">
+            <input type="text" name="txt3">    
+        </fieldset>
+    </form>
+    <hr>
+    <img src="../asset/images/catty01.png" name="cat1">
+
+    <script>
+        var btn1 = document.form1.btn1;
+        var btn2 = document.form1.btn2;
+        var txt1 = document.form1.txt1;
+        var txt2 = document.form1.txt2;
+
+        btn1.onclick = m1;
+        function m1() {     //버튼 클릭 > 즉시 호출
+            setTimeout(f1, 3000);       //3초
+        }
+        function f1() {     //m1호출 > 3초후 > f1 호출
+            alert("3초후 실행되었습니다");
+            txt1.value = (new Date()).toLocaleTimeString();
+        }
+        
+        btn2.onclick = m2;
+        function m2() {
+            setInterval(f2, 1000);
+        }
+        function f2() {
+            txt2.value = (new Date()).toLocaleTimeString();
+            // alert("3초후 실행되었습니다");
+        }
+
+        //------------------------------------------------------------
+
+        //1. 타이머를 단 1개만 실행하도록 -> 중복실행 금지
+        //2. 타이머를 다중실행
+        var btn3 = document.form1.btn3;
+        var btn4 = document.form1.btn4;
+        var txt3 = document.form1.txt3;
+        var n = 1;
+        var timer = 0;
+        var timerlist = [];
+
+        btn3.onclick = m3;
+        function m3() {
+            //1
+            // if(timer == 0){
+            //     timer = setInterval(f3, 100);
+            //     console.log(timer);
+            // }
+
+            //2
+            timer = setInterval(f3, 100);
+            timerlist.push(timer);
+        }
+        function f3() {
+            txt3.value = n;
+            n++;
+        }
+        
+        btn4.onclick = m4;
+        function m4() {
+            //1
+            // clearInterval(timer);
+            // timer = 0;
+
+            //2
+            //순차 중지
+            timer = timerlist.pop();
+            clearInterval(timer);
+            //일괄 중지
+            for(var i=0 ; i<timerlist.length ; i++){
+                clearInterval(timerlist[i]);
+            }
+        }
+
+        //-------------------------------------------------------
+
+        var cat1 = document.images['cat1'];
+        var m = 1;
+        var ctimer = 0;
+
+        cat1.onclick = m5;
+        function m5() {
+            if(ctimer == 0){
+                ctimer = setInterval(f5, 100);
+            }else {
+                clearInterval(ctimer);
+                ctimer = 0;
+            }
+        }
+        function f5() {
+            m++;
+            if(m > 9) m = 1;
+            cat1.src = '../asset/images/catty0' + m + '.png';
+        }
+
+    </script>
+</body>
+</html>

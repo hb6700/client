@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_timer</title>
+    <style>
+        #num {
+            font-size: 100px;
+            border: 0px;
+            text-align: center;
+            margin-top: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" name="num" id="num" value="10">
+    </div>
+    <script>
+        var n = 10;
+
+        var timer = 0;
+
+        setInterval(m1, 1000);
+
+        function m1() {
+            n--;
+            document.all.num.value = n;
+            if(n == 0){
+                clearInterval(timer);
+                //구글로 이동
+                // alert("hello");
+                location.href="http://naver.com";
+            }
+            // for (var n=10 ; n<0 ; n--){
+            // }
+        }
+
+
+    </script>
+</body>
+</html>

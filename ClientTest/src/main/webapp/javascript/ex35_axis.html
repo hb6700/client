@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex35_axis</title>
+    <style>
+        div{
+            border: 1px solid black;
+            padding: 15px;
+            margin: 15px;
+        }
+        #me{
+            border: 10px solid cornflowerblue;
+        }
+        .check{
+            outline: 10px solid coral;
+        }
+    </style>
+</head>
+<body>
+    <h1>AXIS</h1>
+    <input type="button" value="button" id="btn1">
+    <hr>
+    <div>
+        <!-- 할아버지 -->
+        <div>
+            큰아버지
+            <div>사촌</div>
+        </div>
+        <div>
+            아버지
+            <div>큰형</div>
+            <div>작은형</div>
+            <div id="me">
+                나
+                <div>자식</div>
+                <div>
+                    자식
+                    <div>손자</div>
+                </div>
+                <div>자식</div>
+            </div>
+            <div>동생</div>
+            <div>막내동생</div>
+        </div>
+        <div>
+            작은아버지
+            <div>사촌</div>
+        </div>
+    </div>
+
+    <script>
+        /*
+            DOM 노드(태그)검색
+            1. 식별자 검색 도구
+                - obj.getElementById()
+                - obj.getElementsByClassName()
+            2. 트리 구조 기반 > 상대 표현(Axis)
+                - 나를 기준으로 부모, 자식, 형제를 탐색하는 방법
+
+            DOM 트리 구조
+            - 태그들로 구성된 트리가 아니다
+            - 문서 내의 모든 요소가 노드로 구성된다.
+
+            DOM 트리의 구성요소
+            - 태그 이외의 것들도 포함
+            - 태그, PCDATA, 주석, 엔티티, 선언문, 속성 등...
+            1. 태그(1)
+            2. 태그(2)
+            3. PCDATA(3)
+            4. 주석(8)
+            5. 선언문(13)
+            
+            DOM 노트 프로퍼티
+            1. nodeType -> 해당 노드가 어떤 형식인지 열거형(숫자형)으로 표시
+            2. nodeName -> 해당 노드의 이름
+                - 태그 : 태그명 반환(대문자)
+                - PCDATA : #text 반환
+                - 속성 : 속성명 반환
+            3. nodeValue -> 해당 노드의 값
+                - 태그(null)
+                - 속성(속성값)
+                - PCDATA(문자열)
+
+        */
+        document.getElementById('btn1').onclick = m1;
+        function m1() {
+            var me = document.getElementById('me');
+            //<body class="check">
+            //document.body.className = 'check';
+
+            //자식 태그
+            //me.childNodes : 자식 노드들(친자식)
+            // alert(me.childNodes.length);
+
+            // for (var i=0 ; i<me.childNodes.length ; i++){
+                // console.log(me.childNodes[i]);
+                // console.log(me.childNodes[i].nodeType);
+                // console.log(me.childNodes[i].nodeName);
+                // console.log(me.childNodes[i].nodeValue);
+            // }
+
+            // for (var i=0 ; i<me.childNodes.length ; i++){
+            //     if(me.childNodes[i].nodeType == 1 && me.childNodes[i].nodeName == 'DIV'){
+            //         me.childNodes[i].className = 'check';
+            //     }
+            // }
+
+            //me.childNodes > 모든 노드가 자식
+            //me.children > 태그 노드만 자식으로 인식
+
+            // alert(me.children.length);
+
+            // for (var i=0 ; i<me.children.length; i++){
+            //     me.children[i].className = 'check';
+            // }
+
+            //me.childNodes : 모든 자식
+            //me.firstChild : 첫번째 자식 > me.childNodes[0]
+            //me.lastChild : 막내 자식 > me.childNodes[length-1]
+
+            //me.children : 모든 태그 자식
+            //me.firstElementChild : 첫번째 자식태그
+            //me.lastElementChild : 막내 자식태그
+
+            // me.children[1].firstElementChild.className = 'check';
+
+            //부모 or 조상
+            //me.parentNode
+            //me.parentElement
+
+            // me.parentNode.className = 'check';
+            // me.parentElement.className = 'check';
+            // me.parentElement.parentElement.className = 'check';
+            // me.parentElement.parentElement.parentElement.className = 'check';
+            // me.parentElement.parentElement.parentElement.parentElement.className = 'check';
+            // alert(me.parentElement.parentElement.parentElement.parentElement.parentNode == document);
+
+            //BOM에서는 최상위 객체 > winow
+            //DOM에서는 최상위 객체 > document
+            //alertl(me.parentElement.parentElement.parentElement.parentElement.parentNode.parentNode);
+
+            // me.parentElement.parentElement.firstElementChild.className = 'check';   //큰아버지
+            // me.parentElement.parentElement.firstElementChild.firstElementChild.className = 'check'; //큰아버지네 사촌
+            
+            //큰형
+            // me.parentElement.firstElementChild.className = 'check';
+
+            //형제간 접근 프로퍼티
+            //me.previousSibling > 바로 위의 형제(모든노드)
+            //me.nextSibling > 바로 미트이 형제(모든노드)
+            // me.previousElementSibling > 
+            // me.nextElementSibling > 
+
+            // me.previousElementSibling.className = 'check';                           //작은형
+            // me.previousElementSibling.previousElementSibling.className = 'check';    //큰형
+            // me.nextElementSibling.className = 'check';                               //동생          
+            // me.nextElementSibling.nextElementSibling.className = 'check';            //막내동생
+
+            //HTML > id와 class남발 : 가독성 저하, 코드관리 열약
+            //최소하느이 id와 class -> 태그 검색 -> 상대검색
+
+        }//btn1.onclick
+    </script>
+</body>
+</html>
