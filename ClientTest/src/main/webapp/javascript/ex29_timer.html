@@ -9,9 +9,9 @@
     <!-- 
         타이머(Timer)
         타이머 시작
-        1. id setTimeout(할일, 시간);
+        1. id setTimeout(할일, 시간(ms));
             - 1회성 타이머
-        2. id setInterval(할일, 시간);
+        2. id setInterval(할일, 시간(ms));
             - 반복 타이머
 
         타이머 종료 
@@ -53,7 +53,7 @@
             setTimeout(f1, 3000);       //3초
         }
         function f1() {     //m1호출 > 3초후 > f1 호출
-            alert("3초후 실행되었습니다");
+            // alert("3초후 실행되었습니다");
             txt1.value = (new Date()).toLocaleTimeString();
         }
         
@@ -62,8 +62,8 @@
             setInterval(f2, 1000);
         }
         function f2() {
-            txt2.value = (new Date()).toLocaleTimeString();
             // alert("3초후 실행되었습니다");
+            txt2.value = (new Date()).toLocaleTimeString();
         }
 
         //------------------------------------------------------------
@@ -75,11 +75,12 @@
         var txt3 = document.form1.txt3;
         var n = 1;
         var timer = 0;
+        //배열생성
         var timerlist = [];
 
         btn3.onclick = m3;
         function m3() {
-            //1
+            //1. 1번 이상누르면 타이머가 마지막꺼만 멈춰서 안멈춤
             // if(timer == 0){
             //     timer = setInterval(f3, 100);
             //     console.log(timer);
@@ -87,6 +88,7 @@
 
             //2
             timer = setInterval(f3, 100);
+            //배열에 값 삽입
             timerlist.push(timer);
         }
         function f3() {
@@ -96,9 +98,9 @@
         
         btn4.onclick = m4;
         function m4() {
-            //1
-            // clearInterval(timer);
+            //1. 재시작 가능하게 만들어줌
             // timer = 0;
+            // clearInterval(timer);
 
             //2
             //순차 중지

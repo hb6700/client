@@ -32,6 +32,7 @@
 
         function m1() {
             //사용자가 선택한 과일? > 모든입력 컨트롤 > value속성
+            //option 선택지가 select의 값이 됨
             // alert(sel1.value);
 
             // sel1.value = '파인애플';
@@ -71,9 +72,10 @@
             sel1.options.remove(sel1.selectedIndex);
         }
         function m5() {
-            // 단일 선택
+            //단일 선택
             // alert(sel1.value);
 
+            //읽기 다중 선택
             // for (var i=0 ; i<sel1.options.length; i++){
             //     // alert(sel1.options[1].selected);
             //     if(sel1.options[i].selected){
@@ -81,9 +83,10 @@
             //     }
             // }
 
-            sel.options[1].selected = true;
-            sel.options[2].selected = true;
-            sel.options[3].selected = true;
+            //쓰기
+            // sel.options[1].selected = true;
+            // sel.options[2].selected = true;
+            // sel.options[3].selected = true;
         }
     </script>
 </body>
