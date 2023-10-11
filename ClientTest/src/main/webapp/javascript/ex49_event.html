@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex49_event</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        #tbl1 td {
+            border: 1px solid black;
+            width: 100px; height: 100px;
+        }
+        #tbl1 td img{
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- table#tbl1>tr*10>td*10 -->
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        const list = document.querySelectorAll('#tbl1 td');
+        for(let i=0; i<list.length; i++){
+            // enter/leave 자식 요소에 문제 없이 깔끔한 사용 가능
+            // 일반적으로는 over/out 사용
+
+            list[i].onmouseenter = function() {
+                
+                //보조키 동작
+                // console.log(event.ctrlKey);
+                // console.log(event.shiftKey);
+                // console.log(event.altKey);
+                
+                if(event.currentTarget.children.length == 0){
+                    // event.target.bgColor = 'gold';
+
+                    // let img = document.createElement("img");
+                    // img.setAttribute("src", "../asset/images/rect_icon05.png");
+                    // event.target.appendChild(img);
+
+                    const img = document.createElement('img');
+
+                    if(event.ctrlKey){
+                        img.setAttribute('src', '../asset/images/rect_icon05.png');
+                        event.currentTarget.appendChild(img)
+                    }else{
+                        img.setAttribute('src', '../asset/images/rect_icon06.png');
+                        event.currentTarget.appendChild(img)
+                    }
+
+                }
+
+            }
+            // list[i].onmouseleave = function() {
+            //     // event.target.bgcolor = 'tranparent';
+            //     event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+            // };
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex46_event</title>
+    <style>
+        .box{
+            padding: 50px;
+        }
+        #p1{background-color: tomato;}
+        #p2{background-color: gold;}
+        #p3{background-color: cornflowerblue;}
+    </style>
+</head>
+<body>
+    <div id="p1" class="box">
+        <div id="p2" class="box">
+            <div id="p3" class="box">
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <input type="text" id="txt1">
+
+    <hr>
+
+    <img src="../asset/images/catty01.png">
+
+    <script>
+        //이벤트 버블링(Event Bubbling)
+        //이벤트 터널링(Tunneling) == 이벤트 캡쳐링(Capturing)
+
+        // 최상위 태그부터 하위 태그까지 내려가는 것 = 이벤트 터널링
+        // 하위태그부터 최상위 태그까지 올라가는 것 = 이벤트 버블링
+
+        // 이벤트 터널링
+        // - 지원 안함
+
+        // 이벤트 버블링
+        // - 지원함
+        // - 기본값
+        
+        const p1 = document.getElementById('p1');
+        const p2 = document.getElementById('p2');
+        const p3 = document.getElementById('p3');
+
+        // document.getElementsByTagName('html')[0].onclick = function(){
+        //     alter('html');
+        // };
+
+        // document.getElementsByTagName('body')[0].onclick = function(){
+        //     alter('body');
+        // };
+
+        // p1.onclick = function() {
+        //     alert('빨강');
+        // };
+        
+        // p2.onclick = function() {
+        //     alert('노랑');
+        //     event.cancelBubble = true;
+        // };
+        
+        // p3.onclick = function() {
+        //     alert('파랑');
+        //     //이벤트 버블링을 여기서 멈춰주세요 > 더 이상의 이벤트는 없다.
+        //     event.cancelBubble = true;
+        // };
+
+        //window의 키 이벤트 > 모든 상황에 늘 발생
+        // document.getElementById('cat1').onkeydown = function(){
+        // window.onkeydown = function(){
+        //     if(event.keyCode == 37){
+        //         // alert();
+        //         document.getElementById('cat1').width -= 10;
+        //     }else if(event.keyCode == 39){
+        //         document.getElementById('cat1').width += 10;
+        //     }else if(event.keyCode == 65){
+        //         location.href = 'https://google.com';
+        //     }
+        // }
+
+        // 아무에게도 포커스가 없다면 window가 가지고 있다고 생각하자.
+
+        // document.getElementById('txt1').onkeydown = function() {
+        //     event.cancelBubble = true;
+        // }
+
+
+        //기본동작
+        //이벤트 버블링
+        //1. BOM 이벤트 - 이벤트버블링
+        //2. DOM 이벤트 - 이벤트버블링/이벤트터널링
+
+        // p1.addEventListener(type, function() {}, false);
+
+        //true -> 터널링
+        // p1.addEventListener('click', function(){
+        //     alert('빨강');
+        // }, true);
+        // p2.addEventListener('click', function(){
+        //     alert('노랑');
+        // }, true);
+        // p3.addEventListener('click', function(){
+        //     alert('파랑');
+        // }, true);
+
+        //버블링
+        p1.addEventListener('click', function(){
+            alert('빨강');
+        });
+        p2.addEventListener('click', function(){
+            alert('노랑');
+        });
+        p3.addEventListener('click', function(){
+            alert('파랑');
+            event.stopPropagation();        //이벤트 전파 중지
+        });
+        
+        // 부모자식이 겹쳐있을 때 어떤 이벤트를 먼저할지 생각하고
+        // 부모 먼저 -> 터널링
+        // 자식 먼저 -> 버블링
+    </script>
+</body>
+</html>

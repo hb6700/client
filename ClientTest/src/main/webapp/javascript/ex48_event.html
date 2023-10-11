@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex48_event</title>
+    <style>
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        #tbl1 td {
+            border: 1px solid black;
+            width: 126px; height: 126px;
+            /* font-size: 0px;  : 비추천 */
+        }
+        #tbl1 td img{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>TABLE</h1>
+    <!-- table#tbl1>tr*3>td*3 -->
+    <table id="tbl1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        const list = document.querySelectorAll('#tbl1 td');
+        for (let i=0; i<list.length; i++){
+            list[i].onmousedown = function() {
+                if(event.buttons == 1){
+
+                    if(event.target.nodeName == 'TD'){
+                        //빈 TD
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon01.png');
+                        event.target.appendChild(img);
+                        // console.log(event.target);
+                    }else {
+                        //<img>
+                        //기존 이미지 제거
+                        event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+                        //새 이미지 추가
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon01.png');
+                        event.currentTarget.appendChild(img);
+                    }
+                    // console.log(event.target);           // img
+                    // console.log(event.currentTarget);    // td
+                }else if(event.buttons == 2){
+                    if(event.target.nodeName == 'TD'){
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon02.png');
+                        event.target.appendChild(img); 
+                    }else{ 
+                        event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+
+                        let img = document.createElement('img');
+                        img.setAttribute('src', '../asset/images/rect_icon02.png');
+                        event.currentTarget.appendChild(img);
+                    }
+                }else if(event.buttons == 4){
+                    // let img = document.createElement('img');
+                    // img.setAttribute('src', '../asset/images/rect_icon02.png');
+                    // event.target.appendChild(img);
+                    //클릭한 이미지를 삭제
+                    //부모태그.removeChild(자식태그)
+                    // event.target.parentElement.removeChild(event.target);
+                    event.currentTarget.removeChild(event.currentTarget.firstElementChild);
+                }
+            }
+        }
+        //우클릭 메뉴 지우기
+        //<body oncontextmenu = "return false;">
+        window.oncontextmenu = function() {
+            return false;
+        }
+    </script>
+</body>
+</html>

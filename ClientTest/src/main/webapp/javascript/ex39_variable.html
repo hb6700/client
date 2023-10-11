@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex39_variable</title>
+</head>
+<body>
+    <div id="list">
+        <img src="../asset/images/catty01.png">
+        <img src="../asset/images/catty02.png">
+        <img src="../asset/images/catty03.png">
+        <img src="../asset/images/catty04.png">
+        <img src="../asset/images/catty05.png">
+    </div>
+    <script>
+        /*
+            JavaScript Core(변수 선언하기)
+            1. var
+                - BOM, DOM, ES6
+                - function-scoped
+                - 제어문(영역 인식 불가능)
+                - 중복 선언 가능
+                - 상수 선언 불가능
+            2. let
+                - ES6(ECMAScript 2015)
+                - block-scoped(함수, 제어문)
+                - 중복 선언 불가능
+                - 변수
+            3. const
+                - ES6(ECMAScript 2015)
+                - block-scoped(함수, 제어문)
+                - 중복 선언 불가능
+                - 상수(final 변수)
+        */
+
+    //    var a = 10;
+    //    var a = 20;
+    //    console.log(a);
+
+        let a = 10;             //전역변수
+
+        function m1() {
+            let b = 20;         //지역변수(m1)
+        }
+        m1();
+        // console.log(b)       //오류(b is not defined)
+
+        if(a > 0){
+            let c = 30;         //지역변수(if)
+            var d = 40;         //전역변수
+        }
+        console.log(d);         //출력
+        //console.log(c);       //오류(c is not defined)
+
+        //let a = 50;           //Cannot redeclare block-scoped variable 'a'
+
+        const PI = 3.14;
+        //PI = 5.28;            //Assignment to constant variable.
+        
+
+        //<div> == 객체(object)
+        const list = document.getElementById('list');
+        const arr = [];
+
+        //list.setAttribute('title', '풍선 도움말'); 
+        //list.innerText = '홍길동';
+
+        //list = document.getElementById('txt1');
+
+        for(let i=0; i<list.children.length; i++){
+            list.cihldren[i].onclick = m2;
+        }
+        function m2() {
+            event.target.width += 10;
+        }
+    </script>
+</body>
+</html>

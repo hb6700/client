@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex43_window</title>
+</head>
+<body>
+    <script>
+        //JavaScript > 객체에 프로퍼티를 자유롭게 추가할 수 있다.
+        const hong = {
+            name :'홍길동'
+        };
+        hong.age = 20;
+
+        const now = new Date();
+        console.log(now);
+
+        now.color = 'yellow';           //사용자 정의 프로퍼티
+        console.log(now.color);
+
+        now.check = function() {
+            console.log(check);
+        };
+
+        now.check();
+
+        //---------------------------------------
+
+        //window 객체
+        //window.open()
+        //window.close()
+
+        // window.alert();
+        // window.confirm();
+        // window.prompt();
+        
+        // window.setTimeout();
+        // window.setInterval();
+
+        //JavaScript 의 모든 함수(또는 변수)는 자동으로 window 객체의 프로퍼티가 된다.
+        function m1() {
+            alert();
+        }
+        window.m1 = m1;
+
+        //JavaScript의 전역변수는 자동으로 window객체의 프로퍼티가 된다.
+        var a1 = '홍길동';      //전역변수 > 변수(X), 프로퍼티(O)
+        console.log(window.a1);
+
+        var a1 = '아무개';
+
+        let a2 = '하하하';      //window프로퍼티(X)
+        const a3 = '호호호';    //window프로퍼티(O)
+
+        // delete a1;
+
+        const obj = {name:'객체', age:20};
+
+        //---------------------------------------
+        
+        //제어문 : 객체의 프로퍼티를 탐색하는 루프
+        for(let p in obj){
+            // console.log(p, obj.p);       //undefined
+            console.log(p, obj[p]);
+        }
+        for (let p in window) {
+            // console.log(p, obj.p);       //undefined
+            console.log(p, window["name"]);
+        }
+    </script>
+</body>
+</html>
