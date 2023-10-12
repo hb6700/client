@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex51_css</title>
+    <script src="https://kit.fontawesome.com/607a3353fc.js" crossorigin="anonymous"></script>
+    <style>
+        #box1 {
+            border: 1px solid black;
+            width: 200px; height: 200px;
+        }
+        .one {font-size: 3rem;}
+        .two {color: cornflowerblue;}
+        .three {text-decoration: underline;}
+        body{margin-bottom: 300px;}
+    </style>
+</head>
+<body>
+    <h1>CSS</h1>
+    <input type="button" value="button" id="btn1">
+    <hr>
+    <div id="box1">BOX</div>    <!--style="width: 200px"-->
+    <hr>
+    <h1>TEXT</h1>
+    <div class="tool">
+        <button type="button" id="btn2"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+        <button type="button" id="btn3"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+    </div>
+
+    <p id="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem illo nesciunt, sunt provident repellendus voluptate, iure commodi iste, distinctio labore quae modi dolore alias. Sit, quos? Libero officia iusto, quia sint exercitationem repudiandae veritatis, reiciendis soluta dolorum natus impedit earum repellendus corporis, neque est quibusdam eius rem dignissimos aspernatur facere? Iste rem dolores temporibus, architecto, cumque fugiat, eligendi libero sint quos earum explicabo voluptas accusantium harum tempore. Eius accusantium nulla, dolor, eligendi eveniet facilis odit doloremque fugiat nam quam unde deleniti nisi sapiente labore omnis harum voluptates ex. Illum corrupti dolorum voluptas, provident quidem rem accusamus id sint, quo sequi perspiciatis ab dolor asperiores alias quos commodi esse, ducimus possimus delectus dolores optio quibusdam aspernatur! Eveniet eius at quo aliquid dolorem voluptas porro error adipisci debitis fuga expedita animi esse quae rem quia ducimus tempora rerum quam ut, et totam dignissimos nihil, quaerat odio. Exercitationem, voluptatem, iure necessitatibus aliquam ut fugit tempora voluptates, et ex veritatis earum possimus! Hic, et nostrum? Veritatis facere, reprehenderit in animi magnam beatae sit minima nihil ab aliquid quibusdam non. Dicta harum, reprehenderit provident repellat blanditiis quae? Consequuntur, modi iusto iste, similique nihil reiciendis, aspernatur assumenda architecto quas ducimus nesciunt praesentium! At provident eveniet pariatur asperiores in optio sit, ratione quo placeat. Dolorem quae voluptatum reiciendis modi, omnis ipsam assumenda perferendis, harum ducimus sequi sunt laudantium esse maxime placeat officiis accusantium quam architecto consequuntur! Error esse asperiores repellat sit, provident est ullam obcaecati, quibusdam fuga laudantium nemo unde facilis ipsum! Magni, itaque. Quaerat impedit, saepe aperiam atque repudiandae quisquam. Architecto id, quisquam accusamus corporis incidunt quod aspernatur quo reiciendis pariatur, eius quia nam quae dicta voluptatem doloribus sint vel sed animi facere. Fugiat sequi magni assumenda maiores sit ipsum. In repudiandae magnam voluptates similique non, cupiditate laboriosam repellat exercitationem, a quos nisi repellendus animi blanditiis?</p>
+
+    <script>
+        const btn1 = document.getElementById('btn1');
+        const box1 = document.getElementById('box1');
+
+        btn1.addEventListener('click', function() {
+            /*
+                JavaScript를 이용한 CSS조작
+                1. 모든 태그 → style속성 제공(인라인 스타일 시트) → 자바스크립트 style 프로퍼티 제공
+                2. class조작
+                    - className 프로퍼티
+                    - classList 프로퍼티
+            */
+            //btn1.value = 'Button';
+            //box1.style = 'color: blue';                       //BOM
+            //box1.setAttribute('style', 'color:gold');         //DOM
+
+            //조직적인 관리 어려움
+            // box1.innerHTML = '<input>';
+            // box1.style = 'color: blue; font-size: 2rem;'; 
+            
+            //style 프로퍼티 > 접근 가능 속성 > 배열 제공
+            // box1.style = 'color: blue';
+
+            //사용 예시 - 1(주의! : 캐멀표기법 이용)
+            // box1.style.color = 'blue';
+            // box1.style.fontSize = '2rem';
+            // box1.style.textAlign = 'center';
+            // box1.style.backgroundColor = 'gold';
+
+            //사용 예시 - 2(key값을 이용 -> 하이픈(-)사용 가능)
+            // box1.style['color'] = 'gold';
+            // box1.style['font-size'] = '2rem';
+            // box1.style['background-image'] = 'url(../asset/images/catty01.png)';
+
+            //상자의 현재 너비는?
+            //별도 정의된 CSS접근은 불가능
+            // box1.style.width = '300px';
+            // alert(box1.style.width);
+            
+            //버튼 클릭 -> 상자의 너비 -> 현재 너비 + 50px
+            // box1.style.width = parseInt(box1.style.width) + 50 + 'px';
+            
+            //CSS적용 방식 부관 > 현재 객체에 적용된 모든 CSS속성을 반환
+            const list = window.getComputedStyle(box1);
+            
+            //CSS정보 얻어오기 위해 사용하는 방법
+            // alert(box1.style.width);
+            // alert(list.width);
+            alert(list.getPropertyPriority('width'));
+        });//btn1.onclick
+
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+        const content = document.getElementById('content');
+
+        //글자 사이즈 조절
+        // let size = 16;
+        // btn2.addEventListener('click', function() {
+        //     size--;
+        //     content.style.fontSize = size + 'px';
+        // });
+        // btn3.addEventListener('click', function() {
+        //     size++;
+        //     content.style.fontSize = size + 'px';
+        // });
+
+
+
+        btn2.addEventListener('click', function() {
+            //<p class="one two">
+            // content.className = 'one two';
+
+            content.classList.add('one');
+            content.classList.add('two');
+        });
+        btn3.addEventListener('click', function() {
+            //<p class="one twothree">
+            //<p class="one two three">
+            // content.className += ' three';
+
+            content.classList.add('three');
+            content.classList.remove('two');
+        });
+
+    </script>
+</body>
+</html>

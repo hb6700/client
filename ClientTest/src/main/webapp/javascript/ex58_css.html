@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex58_css</title>
+    <style>
+        .box{
+            width: 150px; height: 150px; 
+            position: absolute; 
+            /* left: 0; top: 0;  */
+            background-color: gold;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- drag and drop -->
+    <div id="box1" class="box"></div>
+
+    <script>
+        const box1 = document.getElementById('box1');
+        let isDown = false;
+
+        //drag and drop : 개체 이동 인터페이스
+        window.onmousedown = function() {
+            if(event.target.id == 'box1' && isValid(event)){
+                isDown = true;
+                box1.style.opacity = 0.3;
+            }
+        };
+        function isValid(event) {
+            //마우스가 상자의 우측 하단부를 눌렀는지?
+            
+            //1. 현재 상자의 크기?
+            let w = parseInt(window.getComputedStyle(box1).width);
+            let h = parseInt(window.getComputedStyle(box1).height);
+            
+            if(event.offsetX >= (w - 20) && event.offsetX <= w && event.offsetY >= (h - 20) && event.offsetY <= h){
+                return true;
+            }
+            return false;
+        }
+        
+        window.onmousemove = function() {
+            
+            if(isDown){
+                box1.style.width = event.clientX+ 'px';
+                box1.style.height = event.clientY + 'px';
+            }
+        };
+        window.onmouseup = function() {
+            isDown = false;
+            box1.style.opacity = 1;
+        };
+    </script>
+</body>
+</html>

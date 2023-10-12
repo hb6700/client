@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex57_css</title>
+    <style>
+        .draggable{
+            position: relative;
+            left: 0; top: 0;    
+        }
+        .box{
+            width: 150px; height: 150px;
+            /* background-color: gold; */
+            border: 1px solid black;
+        }
+        
+        #box1{background-color: tomato;}
+        #box2{background-color: gold;}
+        #box3{background-color: cornflowerblue;} 
+       
+    </style>
+</head>
+<body>
+    <h1 class="draggable">Drag & Drop(relative)</h1>
+    <!-- div#box$.box{상자$}*3 -->
+    <div id="box1" class="box draggable">상자1</div>
+    <div id="box2" class="box draggable">상자2</div>
+    <div id="box3" class="box draggable">상자3</div>
+    <img src="../asset/images/catty01.png" class="draggable">
+
+    <script>
+        let obj;        //드래그 객체  
+        let isDown = false;
+        let x = 0;
+        let y = 0;
+        let bx = 0;
+        let by = 0;
+
+        window.onmousedown = function() {
+
+            if(event.target.classList.contains('draggable')){
+                isDown = true;
+                x = event.offsetX;
+                y = event.offsetY;
+                obj = event.target;
+                bx = event.target.getBoundingClientRect().x - parseInt(event.target.style.left);
+                by = event.target.getBoundingClientRect().y - parseInt(event.target.style.top);
+            }
+        };
+
+
+        window.onmousemove = function() {
+            
+            if(isDown){
+                obj.style.left = event.clientX - x - bx + 'px';
+                obj.style.top = event.clientY - y - by + 'px';
+
+                //고스트 이미지 현상 제거
+                event.stopPropagation();
+                return false;
+            }
+
+        };
+
+
+        window.onmouseup = function() {
+            isDown = false;
+        };
+    </script>
+</body>
+</html>
