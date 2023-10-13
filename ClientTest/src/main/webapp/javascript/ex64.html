@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex64</title>
+</head>
+<body>
+    <script>
+        //객체
+        const o1 = new Object();
+        const o2 = {};
+
+        o1.name = '홍길동';
+        o1.hello = function(){
+            console.log('hello');
+        }
+        o2.name = '아무개';
+        o2.hello = function(){
+            console.log('안녕');
+        }
+
+        //생성자함수
+        //자바의 생성자와 유사
+
+        // class User {
+        //     private String name;
+        //     private int age;
+
+        //     public User(String name, int age){
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        // }
+
+        //생성자함수
+        //함수명을 파스칼 표기법으로 작성한다.
+        function User(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //***생성자함수는 절대로 일반 함수처럼 그냥 호출하면 안된다.
+        // User('홍길동', 20);
+
+        //***생성자 함수는 반드시 new 연산자와 같이 사용해야 한다.
+        //new : 객체 생성 연산자 == new Object()
+        const o3 = new User('홍길동', 20);
+        console.log(o3);
+        console.log(o3.name);
+        console.log(o3.age);
+        
+        const o4 = new User('하하하', 25);
+        console.log(o4.name);
+        console.log(o4.age);
+        
+        //new > {}
+        const now = new Date();
+        const list = new Array();       //니가 알던 배열 아님
+
+        list[0] = 10;       //0 -> 프로퍼티
+        list[2] = 30;       //2 -> 프로퍼티
+
+        console.log(list[1]);       //undefined
+        
+
+        //객체 만들었어 근데 프로퍼티가 없어! 그럴때 defined
+        const hong = {};
+        console.log(hong.name);     //undefined
+        //console.log(height);        //error(ex64.html:68 Uncaught ReferenceError: height is not defined)
+
+        const arr = {
+            0:'사과',
+            1:'귤',
+            2:'바나나',
+            length:3
+        };
+        // console.log(arr.0);
+        console.log(arr[0]);        //사과
+        console.log(arr[1]);        //귤
+        console.log(arr[3]);        //undefined
+        console.log(arr.length);    //3
+
+        const desk = {};
+        const today = new Date();
+        const list2 = new Array();
+
+        console.log(typeof desk);       //object
+        console.log(typeof today);      //object
+        console.log(typeof list2);      //object
+
+
+        //뭘로 만들어졌니? 생성자 확인하는
+        //obejct -> 구체적으로 확인 > 생성자 함수명
+        console.log(today.constructor.name);        //Date
+        console.log(list2.constructor.name);        //Array
+
+        const list3 = new Array();
+        list3[0] = 'dog';
+        list3[1] = 'cat';
+        list3.address = 'Gang-nam gu, Seoul';
+        list3.check = function() {
+            alert('hahaha');
+        };
+
+        //var로 선언한 전역변수 > window의 프로퍼티
+        // var color = 'gold';
+
+        const o5 = {
+            name: 'hong gil dong',
+            age: 20,
+            info: function() {
+                console.log(this.name, this.age);
+            }
+        };
+        o5.info();
+
+        const o6 = {
+            name: 'hohoho',
+            age: 27,
+            info: m1            //실명함수 사용
+        };
+        function m1() {
+            console.log(this.name, this.age);       //o6 > window
+        }
+        o6.info();      //hohoho 27
+        m1();           //undefined(== window.m1();)
+            
+
+
+    </script>
+</body>
+</html>

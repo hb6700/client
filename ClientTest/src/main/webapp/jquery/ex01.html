@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01</title>
+</head>
+<body>
+    <input type="text" name="txt1" id="txt1">
+    <!-- 1. 로컬설치 -->
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    
+    <!-- 2. CDN설치 -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+
+    <script>
+        /*
+            jQuery
+            https:/jquery.com
+
+            jquery설치
+            1. 로컬 설치 -> 파일 다운로드 + 참조
+            2. CDN설치 -> 원격파일 참조
+
+        */
+
+        //텍스트 박스
+        //1. BOM -> BOM트리
+        document.all.txt1.value = 'BOM';
+
+        //2. DOM > getXXX 메소드 or DOM 트리(Axis) or querySelectorXXX
+        document.getElementById('txt1').value = 'DOM';
+
+        //3. jQuery > jQuery()함수
+        //document.querySelectorAll(CSS선택자)
+        jQuery('#txt1').val('jQuery');
+    </script>
+</body>
+</html>

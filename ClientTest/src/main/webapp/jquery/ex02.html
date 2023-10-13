@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>jQuery() function</h1>
+    <input type="button" value="check" name="btn1" id="btn1">
+    <hr>
+    <!-- div#box$.box{box$}*5 -->
+    <div id="box1" class="box">box1</div>
+    <div id="box2" class="box">box2</div>
+    <div id="box3" class="box">box3</div>
+    <div id="box4" class="box">box4</div>
+    <div id="box5" class="box">box5</div>
+
+    <!-- jquery 로컬설치 -->
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        /*
+        jQuery()함수
+        - CSS 선택자 or 다른 표현을 사용해서 태그를 검색한다.
+        1. jQuery()로 찾은 결과는 항상 배열이다.
+        2. 반환값에 무언가를 적용하면 항상 자동으로 루프가 동작되어 각 요소마다 적용된다.
+        3. 자바스크립트 객체를 jQuery객치로 변환
+
+        */
+        
+        //간단한 테스트 : 버튼 색상 변경 black -> blue
+        const btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', function() {
+            //jQuery + CSS 선택자
+            // jQuery('#btn1').css('color', 'blue');
+
+            //DOM
+            // const list = document.getElementsByClassName('box');
+
+            // for(let i=0; i<list.length; i++){
+            //     list[i].style.color = 'blue';
+            // }
+
+            //forEach > new Array()에서 동작
+            // list.forEach(box => box.style.color = 'yellow');
+            // Array.from(list).forEach(box => box.style.color = 'tomato');
+
+
+            //jQuery
+            // jQuery('.box').css('color', 'yellowgreen');
+            
+            //태그 선택자
+            // jQuery('div').css('color', 'orange');
+            //id선택자
+            // jQuery('#box1').css('color', 'blue');
+            //class 선택자
+            // jQuery('.box').css('color', 'yellowgreen');
+            //그 이외 선택자
+            // jQuery('h1, div:nth-child(even)').css('color', 'tomato');
+            
+
+            const a = document.all.btn1;                    //BOM
+            const b = document.getElementById('btn1');      //DOM
+            const c = jQuery('#btn1');                      //jQuery
+
+            // alert(a === b);         //true
+            // alert(a == c);           //false
+            // alert(b == c);           //false
+            
+            //BOM or DOM > 같은 자료형 반환
+            //jQuery > jQuery 객체 반환
+
+            // a.value = 'ok';
+            // b.value = 'ok';
+            // b.setAttribute('value', 'ok');
+
+            // c.value = 'ok';          //X
+            // c.val('ok');
+
+            // a.val('ok');             //X
+
+            //BOM or DOM 객체 > (형변환) > jQuery 기능 사용
+            jQuery(a).val('ok');            //비교적 자주 사용
+
+            //jQuery 객체 > (형변환) > BOM or DOM 객체
+            //jQuery객체로부터 [index]를 사용해서 꺼내는 순간 순수한 자바스크립트 객체가 반환된다.
+            // c[0].value = 'ok';           //많이 사용하지는 않음
+
+        });
+    </script>
+</body>
+</html>
