@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06_box</title>
+    <style>
+        #box {
+            border: 20px solid cornflowerblue;
+            width: 200px; height: 200px;
+            padding: 30px; margin: 50px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery + Box Model</h1>
+    <input type="button" value="button" id="btn1">
+    <hr>
+    <div id="box">BOX</div>
+
+    <!-- jquery 로컬설치 -->
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+        //1. CSS 속성
+        console.log('width', $('#box').css('width'));       //200px(문자)
+        console.log('height', $('#box').css('height'));     //200px(문자)
+        // $('#box').css('width', '300px');
+
+        //2. 전용 메소드    > 반환값 : 숫자
+        console.log('width()', $('#box').width());          //200
+        console.log('height()', $('#box').height());        //200
+        // $('#box').height(300);
+
+        //3. width/height + padding  = orange영역
+        console.log('innerWidth()', $('#box').innerWidth());    //260
+        console.log('innerHeight()', $('#box').innerHeight());  //260
+        
+        //4. width/height + padding + border = orange영역 + cornflowerblue테두리 > 실제 사각형
+        console.log('outerWidth()', $('#box').outerWidth());    //300
+        console.log('outerHeight()', $('#box').outerHeight());  //300
+        
+        //5. width/height + padding + border + margin
+        // = orange영역 + cornflowerblue테두리 > 실제 사각형
+        console.log('outerWidth(true)', $('#box').outerWidth(true));    //400
+        console.log('outerHeight(true)', $('#box').outerHeight(true));  //400
+        
+        </script>
+</body>
+</html>
